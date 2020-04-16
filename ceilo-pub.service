@@ -1,0 +1,11 @@
+[Unit]
+Description=Ceilometer publishing service
+
+[Service]
+WorkingDirectory=/opt/ceilPublisher
+ExecStart=/usr/bin/python /opt/ceilPublisher/ceilPublisher.py
+Restart=always
+
+[Install]
+WantedBy=default.target
+
