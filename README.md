@@ -18,12 +18,13 @@ Apart from the instructions relevant to deployment of this publisher, indicative
 
 Inspect the `publisher.conf` file and modify it before the build of the image. 
 The default settings are the following:
-- udp_server
-   + port: 10000 
-- kafka
-   + ip: 192.168.1.107
-   + port: 9092
-   + topic: nfvi.example.openstack
+
+| Parameter  | Value  |
+|---|---|
+| UDP port | 10000  | 
+| kafka host  | 192.168.1.107 |   
+| Kafka port  | 9092 |   
+| Topic name  | nfvi.example.openstack |   
    
 You need to configure the ceilometer properly in order to push the data over UDP in this service.
 
