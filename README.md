@@ -1,4 +1,4 @@
-# `Openstack-kafka-publisher` service
+# Openstack-kafka-publisher service
 
 ## Introduction
 
@@ -6,12 +6,12 @@ The role of the `Openstack-kafka-publisher` service is to receive monitoring dat
 
 Actually, this service feeds the [MAPE](https://github.com/5g-media/mape) with monitoring data.
 
-Apart from the instructions relevent to deployment of this publisher, indicative configuration of the Ceilometer service is provided under the `ceilometer` folder.
+Apart from the instructions relevant to deployment of this publisher, indicative configuration of the Ceilometer service is provided under the `ceilometer` folder.
 
 
 ## Requirements
 - The docker engine has been installed
-- The Ceilometer can access this service (check firewall)
+- The Ceilometer service can access this service (check firewall)
 
 
 ## Configuration
@@ -38,7 +38,7 @@ Before the duild of the docker image, take a look in the configuration section.
 **1. Build teh docker image**
 ```bash
 # clone code from  repository
-cd Openstack-kafka-publisher
+cd openstack-kafka-publisher
 docker build -t ceilometer_kafka_publisher .
 ```
 
