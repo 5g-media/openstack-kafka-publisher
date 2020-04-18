@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The role of the `Openstack-kafka-publisher` service is to receive monitoring data of the running network services (and the running VNFs) deployed in OpenStack NFVI through the Ceilometer service (OpenStack) over UDP protocol and forward them in the publish/subscribe broker of 5G-MEDIA Service Virtualization Platform.
+The role of the `Openstack-kafka-publisher` service is to receive monitoring data of the running network services (and the running VNFs/VMs) deployed in OpenStack NFVI through the Ceilometer service (OpenStack) over UDP protocol and forward them in the publish/subscribe broker of 5G-MEDIA Service Virtualization Platform.
 
 Actually, this service feeds the [MAPE](https://github.com/5g-media/mape) with monitoring data.
 
@@ -13,6 +13,7 @@ Apart from the instructions relevant to deployment of this publisher, indicative
 - The docker engine has been installed
 - The Ceilometer service can access this service (check firewall)
 
+The python packages are available in the `requirements.txt` file.
 
 ## Configuration
 
@@ -36,14 +37,14 @@ Take a look in the files that are included in the ceilometer folder.
 
 Before the duild of the docker image, take a look in the configuration section.
 
-**1. Build teh docker image**
+**1. Build the docker image**
 ```bash
 # clone code from  repository
 cd openstack-kafka-publisher
 docker build -t ceilometer_kafka_publisher .
 ```
 
-**2. Instaintiate the service as docker container**
+**2. Instantiate the service as docker container**
 ```bash
 docker run -d --name ceilometer_kafka_publisher -p 10000:10000/udp ceilometer_kafka_publisher
 ```
@@ -74,7 +75,7 @@ The expected response should look like:
  - Contact with Authors
  
 ## Acknowledgements
-This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 761699. The dissemination of results herein reflects only the author’s view and the European Commission is not responsible for any use that may be made of the information it contains.
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement [No 761699](http://www.5gmedia.eu/). The dissemination of results herein reflects only the author’s view and the European Commission is not responsible for any use that may be made of the information it contains.
 
 ## License
 [Apache 2.0](LICENSE.md)
